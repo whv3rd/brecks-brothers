@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brecks Brothers | Family of Brands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1612;
+    --ink-soft: #3d3530;
+    --gold: #c49a3c;
+    --gold-light: #e8c876;
+    --gold-pale: #f5edd8;
+    --cream: #faf7f2;
+    --cream-dark: #f0ebe0;
+    --stone: #8a7f72;
+    --stone-light: #c4bdb4;
+    --white: #ffffff;
+    --ff-display: 'Playfair Display', Georgia, serif;
+    --ff-body: 'Cormorant Garamond', Georgia, serif;
+    --ff-sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--ff-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(26,22,18,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196,154,60,0.2);
+  }
+  .nav-brand {
+    font-family: var(--ff-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .nav-brand span { color: var(--white); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--ff-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stone-light);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    font-family: var(--ff-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.25s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--ink);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(196,154,60,0.08) 0%, transparent 70%);
+  }
+  .hero-eyebrow {
+    font-family: var(--ff-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: var(--ff-display);
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.0;
+    max-width: 900px;
+    margin-bottom: 0.3em;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-rule {
+    width: 80px; height: 1px;
+    background: var(--gold);
+    margin: 1.8rem auto;
+    opacity: 0.6;
+  }
+  .hero-sub {
+    font-family: var(--ff-body);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    color: var(--stone-light);
+    max-width: 640px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+  .hero-actions { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: var(--ff-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    border: none; cursor: pointer;
+    transition: all 0.25s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-ghost {
+    font-family: var(--ff-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stone-light);
+    background: transparent;
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    border: 1px solid rgba(196,154,60,0.3);
+    transition: all 0.25s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  }
+  .hero-scroll span {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* ── INTRO ── */
+  .intro {
+    background: var(--white);
+    padding: 7rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .intro-left h2 {
+    font-family: var(--ff-display);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+  .intro-left h2 em { font-style: italic; color: var(--gold); }
+  .intro-left p {
+    font-family: var(--ff-body);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .intro-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem; margin-top: 2.5rem;
+  }
+  .stat-block { border-left: 2px solid var(--gold); padding-left: 1.2rem; }
+  .stat-number {
+    font-family: var(--ff-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    display: block; line-height: 1;
+  }
+  .stat-label {
+    font-family: var(--ff-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-top: 0.3rem;
+    display: block;
+  }
+  .intro-right {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .intro-monogram {
+    width: 280px; height: 280px;
+    border: 1px solid var(--gold-pale);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .intro-monogram::before {
+    content: '';
+    position: absolute; inset: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(196,154,60,0.25);
+  }
+  .mono-text {
+    font-family: var(--ff-display);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .mono-text span { color: var(--gold); }
+  .mono-sub {
+    position: absolute; bottom: -1rem;
+    background: var(--ink);
+    color: var(--gold);
+    font-family: var(--ff-sans);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 2px;
+  }
+
+  /* ── SECTION WRAPPER ── */
+  section { padding: 6rem 3rem; }
+  .section-label {
+    font-family: var(--ff-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: var(--ff-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    max-width: 700px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .title-rule {
+    width: 50px; height: 2px;
+    background: var(--gold);
+    margin: 1.5rem 0;
+  }
+  .section-intro {
+    font-family: var(--ff-body);
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 3.5rem;
+  }
+
+  /* ── BRANDS SECTION ── */
+  #brands { background: var(--cream); max-width: 100%; }
+  .brands-header { max-width: 1200px; margin: 0 auto; }
+  .brands-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--stone-light);
+    border: 1.5px solid var(--stone-light);
+  }
+
+  .brand-card {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+  }
+  .brand-card::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+  .brand-card:hover::before { transform: scaleX(1); }
+  .brand-card:hover { background: var(--cream); transform: translateY(-2px); }
+  .brand-card.featured {
+    background: var(--ink);
+    grid-column: span 1;
+  }
+  .brand-card.featured:hover { background: #241e19; }
+
+  .brand-icon {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+  }
+  .brand-card.featured .brand-icon { background: rgba(196,154,60,0.15); }
+
+  .brand-tag {
+    font-family: var(--ff-sans);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+  }
+  .tag-active { background: #e8f5e9; color: #2e7d32; }
+  .tag-seeking { background: #fff8e1; color: #f57f17; }
+  .tag-coming { background: #e8eaf6; color: #283593; }
+  .tag-ecom { background: #fce4ec; color: #880e4f; }
+  .brand-card.featured .brand-tag { background: rgba(196,154,60,0.15); color: var(--gold); }
+
+  .brand-name {
+    font-family: var(--ff-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+  }
+  .brand-card.featured .brand-name { color: var(--white); }
+
+  .brand-desc {
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    flex: 1;
+  }
+  .brand-card.featured .brand-desc { color: var(--stone-light); }
+
+  .brand-link {
+    margin-top: 1.5rem;
+    font-family: var(--ff-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.2s;
+  }
+  .brand-link:hover { gap: 0.8rem; }
+  .brand-link svg { width: 14px; height: 14px; }
+
+  /* ── BRAND DETAILS ── */
+  .brand-detail {
+    padding: 6rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .brand-detail-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .brand-detail-sidebar {}
+  .sidebar-number {
+    font-family: var(--ff-display);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--cream-dark);
+    line-height: 1;
+    margin-bottom: -1rem;
+  }
+  .sidebar-name {
+    font-family: var(--ff-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-name em { font-style: italic; color: var(--gold); }
+  .sidebar-tagline {
+    font-family: var(--ff-body);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--stone);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  .sidebar-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+  .pill {
+    font-family: var(--ff-sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    border: 1px solid var(--stone-light);
+    color: var(--ink-soft);
+  }
+  .sidebar-cta {
+    display: block;
+    font-family: var(--ff-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 0.85rem 1.5rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.25s;
+  }
+  .sidebar-cta:hover { background: var(--gold-light); }
+
+  .brand-detail-content {}
+  .detail-section { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--cream-dark); }
+  .detail-section:last-child { border-bottom: none; margin-bottom: 0; }
+  .detail-h {
+    font-family: var(--ff-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 0.8rem;
+  }
+  .detail-body {
+    font-family: var(--ff-body);
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .detail-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .detail-list li {
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    color: var(--ink-soft);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .detail-list li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--gold);
+    font-size: 0.85rem;
+  }
+  .highlight-box {
+    background: var(--ink);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    margin-top: 1.5rem;
+    border-left: 3px solid var(--gold);
+  }
+  .highlight-box p {
+    font-family: var(--ff-body);
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--stone-light);
+  }
+
+  /* ── DIVIDER ── */
+  .brand-divider {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid var(--cream-dark);
+  }
+  .alt-bg { background: var(--white); }
+  .dark-bg { background: var(--ink); }
+  .dark-bg .section-title { color: var(--white); }
+  .dark-bg .section-intro { color: var(--stone-light); }
+
+  /* ── OPPORTUNITY ── */
+  #opportunity { max-width: 100%; }
+  .opp-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .opp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .opp-card {
+    background: rgba(196,154,60,0.07);
+    border: 1px solid rgba(196,154,60,0.2);
+    padding: 2.5rem 2rem;
+    border-radius: 2px;
+  }
+  .opp-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+  .opp-card h3 {
+    font-family: var(--ff-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+  .opp-card p {
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    color: var(--stone-light);
+    line-height: 1.7;
+  }
+
+  /* ── ABOUT ── */
+  #about { max-width: 100%; }
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-text p {
+    font-family: var(--ff-body);
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+  }
+  .about-text .pullquote {
+    font-family: var(--ff-display);
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.4;
+    border-left: 3px solid var(--gold);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+  }
+  .about-sidebar {}
+  .values-list { list-style: none; }
+  .values-list li {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .values-list li:first-child { border-top: 1px solid var(--cream-dark); }
+  .val-num {
+    font-family: var(--ff-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 2rem;
+  }
+  .val-content h4 {
+    font-family: var(--ff-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+  .val-content p {
+    font-family: var(--ff-body);
+    font-size: 0.95rem;
+    color: var(--stone);
+    line-height: 1.6;
+  }
+
+  /* ── CONTACT ── */
+  #contact { max-width: 100%; }
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .contact-left {}
+  .contact-left p {
+    font-family: var(--ff-body);
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  .contact-channels { list-style: none; }
+  .contact-channels li {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .chan-icon {
+    width: 40px; height: 40px;
+    background: var(--gold-pale);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .chan-label {
+    font-family: var(--ff-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+    display: block;
+  }
+  .chan-value {
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .chan-value:hover { color: var(--gold); }
+
+  .contact-form {}
+  .form-group { margin-bottom: 1.4rem; }
+  .form-group label {
+    font-family: var(--ff-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    color: var(--ink);
+    background: var(--white);
+    border: 1px solid var(--stone-light);
+    border-radius: 2px;
+    padding: 0.85rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--gold); }
+  .form-group textarea { resize: vertical; min-height: 130px; }
+  .form-submit {
+    width: 100%;
+    font-family: var(--ff-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--gold);
+    border: none;
+    padding: 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+  .form-submit:hover { background: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 4rem 3rem 2.5rem;
+    border-top: 1px solid rgba(196,154,60,0.2);
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand-name {
+    font-family: var(--ff-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+  .footer-brand-name span { color: var(--white); }
+  .footer-tagline {
+    font-family: var(--ff-body);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--stone);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .footer-col h4 {
+    font-family: var(--ff-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.6rem; }
+  .footer-col ul li a {
+    font-family: var(--ff-body);
+    font-size: 0.95rem;
+    color: var(--stone);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-copy {
+    font-family: var(--ff-sans);
+    font-size: 0.75rem;
+    color: var(--stone);
+  }
+  .footer-copy a { color: var(--gold); text-decoration: none; }
+  .footer-legal {
+    display: flex; gap: 1.5rem;
+  }
+  .footer-legal a {
+    font-family: var(--ff-sans);
+    font-size: 0.72rem;
+    color: var(--stone);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-legal a:hover { color: var(--gold-light); }
+
+  /* ── SECTION SEPARATORS ── */
+  .gold-bar {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.4;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+  .fade-in-delay-4 { transition-delay: 0.4s; }
+  .fade-in-delay-5 { transition-delay: 0.5s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .intro, .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .brands-grid { grid-template-columns: 1fr; }
+    .opp-grid { grid-template-columns: 1fr; }
+    .brand-detail-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .detail-list { grid-template-columns: 1fr; }
+    section { padding: 4rem 1.5rem; }
+    .brand-detail { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand"><span>Brecks</span> Brothers</a>
+  <ul class="nav-links">
+    <li><a href="#brands">Brands</a></li>
+    <li><a href="#consulting">Consulting</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#opportunity">Opportunities</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get In Touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow fade-in">Wilmington, Delaware &nbsp;·&nbsp; Est. 2024</p>
+  <h1 class="fade-in fade-in-delay-1">Built Like <em>Family.</em><br>Run Like a Business.</h1>
+  <div class="hero-rule fade-in fade-in-delay-2"></div>
+  <p class="hero-sub fade-in fade-in-delay-3">A portfolio of brands spanning digital consulting, fine dining, sustainable landscaping, artisan baking, and ecommerce. Growth-oriented. Community-rooted. Always looking for the right partners.</p>
+  <div class="hero-actions fade-in fade-in-delay-4">
+    <a href="#brands" class="btn-primary">Explore Our Brands</a>
+    <a href="#opportunity" class="btn-ghost">Partner With Us</a>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- INTRO / NUMBERS -->
+<div style="background: var(--white); padding: 5rem 3rem;">
+  <div class="intro" style="padding: 0;">
+    <div class="intro-left fade-in">
+      <h2>A <em>family</em> of businesses with a shared standard of excellence.</h2>
+      <p>Brecks Brothers is more than a holding company. It's a philosophy: that businesses built with the care and accountability of family can deliver results at an institutional level.</p>
+      <p>From $1.5B+ in ecommerce revenue realized to freshly baked bagels delivered on your doorstep — every Brecks Brothers venture operates with the same DNA. Integrity, craft, and relentless focus on the customer.</p>
+      <div class="intro-stats">
+        <div class="stat-block">
+          <span class="stat-number">$1.5B+</span>
+          <span class="stat-label">Ecommerce Revenue Realized</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-number">18 yrs</span>
+          <span class="stat-label">Digital Commerce Experience</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-number">6</span>
+          <span class="stat-label">Active & Emerging Brands</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Family Owned & Operated</span>
+        </div>
+      </div>
+    </div>
+    <div class="intro-right fade-in fade-in-delay-2">
+      <div class="intro-monogram">
+        <div>
+          <div class="mono-text">B<span>B</span></div>
+        </div>
+        <div class="mono-sub">Family of Brands</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gold-bar"></div>
+
+<!-- BRANDS -->
+<section id="brands" style="background: var(--cream); padding: 6rem 3rem;">
+  <div class="brands-header fade-in">
+    <p class="section-label">Our Portfolio</p>
+    <h2 class="section-title">Six <em>distinct</em> ventures. One family standard.</h2>
+    <div class="title-rule"></div>
+    <p class="section-intro">Each brand operates independently with its own identity, market, and purpose — united by the values, quality standards, and relentless accountability that define everything we do.</p>
+  </div>
+
+  <div class="brands-grid">
+
+    <!-- DIGITAL CONSULTING -->
+    <div class="brand-card featured fade-in" onclick="document.getElementById('consulting').scrollIntoView({behavior:'smooth'})">
+      <div class="brand-icon" style="background: rgba(196,154,60,0.12);">🖥️</div>
+      <span class="brand-tag" style="background: rgba(196,154,60,0.15); color: var(--gold);">Active</span>
+      <h3 class="brand-name">Brecks Brothers<br>Digital Consulting</h3>
+      <p class="brand-desc">Full-service digital consulting. Boardroom strategy. Platform-agnostic expertise. $1.5B+ in ecommerce revenue realized for growth-stage and enterprise brands.</p>
+      <a href="#consulting" class="brand-link" style="color: var(--gold);">
+        Explore Services <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/></svg>
+      </a>
+    </div>
+
+    <!-- BISTRO -->
+    <div class="brand-card fade-in fade-in-delay-1" onclick="document.getElementById('bistro').scrollIntoView({behavior:'smooth'})">
+      <div class="brand-icon" style="background: #fff8e1;">🍽️</div>
+      <span class="brand-tag tag-seeking">Seeking Investors</span>
+      <h3 class="brand-name">Brecks Bistro &amp;<br>Brecks Brothers Bistro</h3>
+      <p class="brand-desc">A dual-concept fine dining vision. An exclusive prix-fixe restaurant for discerning guests, alongside an elevated everyday bar and dining experience for the neighborhood.</p>
+      <a href="#bistro" class="brand-link">
+        Learn More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/></svg>
+      </a>
+    </div>
+
+    <!-- LANDSCAPING -->
+    <div class="brand-card fade-in fade-in-delay-2" onclick="document.getElementById('landscaping').scrollIntoView({behavior:'smooth'})">
+      <div class="brand-icon" style="background: #e8f5e9;">🌿</div>
+      <span class="brand-tag tag-active">Active</span>
+      <h3 class="brand-name">Brecks Brothers<br>Landscaping</h3>
+      <p class="brand-desc">New Castle County's eco-conscious lawn care service. 100% electric tools, walk-behind mowers only — the greenest, cleanest results for your property.</p>
+      <a href="#landscaping" class="brand-link">
+        Learn More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/></svg>
+      </a>
+    </div>
+
+    <!-- BAKERY -->
+    <div class="brand-card fade-in fade-in-delay-1" onclick="document.getElementById('bakery').scrollIntoView({behavior:'smooth'})">
+      <div class="brand-icon" style="background: #fce4ec;">🥯</div>
+      <span class="brand-tag tag-active">Active</span>
+      <h3 class="brand-name">Brecks Brothers<br>Bakery</h3>
+      <p class="brand-desc">Home-crafted breads, bagels, and pizza doughs delivered fresh to your door in the Greenville, DE area. Weekly subscription. Completely configurable. Locally made.</p>
+      <a href="#bakery" class="brand-link">
+        Learn More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/></svg>
+      </a>
+    </div>
+
+    <!-- SPRINGS INTO THE HOBBY -->
+    <div class="brand-card fade-in fade-in-delay-2" onclick="document.getElementById('springs').scrollIntoView({behavior:'smooth'})">
+      <div class="brand-icon" style="background: #e8eaf6;">🃏</div>
+      <span class="brand-tag tag-ecom">Ecommerce</span>
+      <h3 class="brand-name">Springs Into<br>the Hobby</h3>
+      <p class="brand-desc">A Shopify-powered hobby dropship destination. Sports cards, Pokémon, coins, lawn care and more. The one-stop shop for hobbyists of every kind.</p>
+      <a href="#springs" class="brand-link">
+        Learn More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/></svg>
+      </a>
+    </div>
+
+    <!-- NEW VENTURES -->
+    <div class="brand-card fade-in fade-in-delay-3" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      <div class="brand-icon" style="background: var(--cream-dark);">✦</div>
+      <span class="brand-tag tag-coming">Coming Soon</span>
+      <h3 class="brand-name">What's Next</h3>
+      <p class="brand-desc">The Brecks Brothers portfolio is always growing. If you have an idea worth building, an investment worth making, or a partnership worth exploring — we want to hear from you.</p>
+      <a href="#contact" class="brand-link">
+        Start a Conversation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<div class="gold-bar"></div>
+
+<!-- DIGITAL CONSULTING DETAIL -->
+<div id="consulting" class="alt-bg">
+  <div class="brand-detail">
+    <div class="brand-detail-inner">
+      <div class="brand-detail-sidebar fade-in">
+        <div class="sidebar-number">01</div>
+        <h3 class="sidebar-name">Brecks Brothers<br><em>Digital Consulting</em></h3>
+        <p class="sidebar-tagline">Family-run sensibility. Global consulting results.</p>
+        <div class="sidebar-pills">
+          <span class="pill">Shopify</span><span class="pill">Magento</span><span class="pill">Salesforce CC</span>
+          <span class="pill">CRO</span><span class="pill">Paid Media</span><span class="pill">Lifecycle</span>
+          <span class="pill">Financial Modeling</span><span class="pill">Fractional CMO</span>
+        </div>
+        <a href="mailto:wvinton.ecom@gmail.com" class="sidebar-cta">Request a Consultation</a>
+      </div>
+      <div class="brand-detail-content fade-in fade-in-delay-1">
+        <div class="detail-section">
+          <p class="detail-h">About the Practice</p>
+          <p class="detail-body">Brecks Brothers Digital Consulting is a full-service digital strategy and ecommerce advisory practice led by a seasoned practitioner with 18 years of experience and over $1.5 billion in ecommerce revenue realized across home furnishings, fashion, automotive, pharma, healthcare, and enterprise marketplaces. We work like we're in the same family — and deliver results like a global firm.</p>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">Core Services</p>
+          <ul class="detail-list">
+            <li>Ecommerce Growth &amp; Experience Audit</li>
+            <li>Fractional Ecommerce Advisor (Retainer)</li>
+            <li>Agency Strategy Partnership</li>
+            <li>Contribution Margin Modeling</li>
+            <li>Blended ROAS / MER Analysis</li>
+            <li>CAC / LTV Architecture</li>
+            <li>CRO Prioritization Frameworks</li>
+            <li>Lifecycle &amp; Retention Strategy</li>
+            <li>Financial Forecasting Systems</li>
+            <li>Paid Media Efficiency Reviews</li>
+            <li>Platform Migration Strategy</li>
+            <li>Board / Investor Prep Support</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">Who We Work With</p>
+          <p class="detail-body">Growth-stage and founder-led ecommerce brands between $100K–$100M in revenue. Agencies seeking stronger financial modeling and strategic depth. Operators who understand that growth without margin discipline is fragile. Teams that execute well but need sharper strategic direction.</p>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">Investment</p>
+          <p class="detail-body">Audits from $2,000–$8,000. Fractional Advisory retainers from $2,000–$6,000/month. Agency Strategy partnerships from $3,500–$10,000+ per engagement. All investments reflect Director-level ecommerce expertise and real revenue exposure managed.</p>
+          <div class="highlight-box">
+            <p>"I am comfortable in a boardroom discussing blended MER and contribution margin. I am equally comfortable whiteboarding a broken customer journey from first principles."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="brand-divider">
+
+<!-- BISTRO DETAIL -->
+<div id="bistro">
+  <div class="brand-detail">
+    <div class="brand-detail-inner">
+      <div class="brand-detail-sidebar fade-in">
+        <div class="sidebar-number">02</div>
+        <h3 class="sidebar-name">Brecks Bistro &amp;<br><em>Brecks Brothers Bistro</em></h3>
+        <p class="sidebar-tagline">Two concepts. One vision. Elevated dining for every occasion.</p>
+        <div class="sidebar-pills">
+          <span class="pill">Fine Dining</span><span class="pill">Prix-Fixe</span><span class="pill">Casual Bar</span>
+          <span class="pill">Seeking Partners</span><span class="pill">Investment Opportunity</span>
+        </div>
+        <a href="#contact" class="sidebar-cta">Express Interest</a>
+      </div>
+      <div class="brand-detail-content fade-in fade-in-delay-1">
+        <div class="detail-section">
+          <p class="detail-h">The Vision</p>
+          <p class="detail-body">A dual-concept restaurant experience designed for a community that deserves better. Brecks Bistro is the pinnacle — an intimate, reservation-only fine dining experience with a fixed menu and fixed price, available 1–3 evenings per week. Exclusive, intentional, unforgettable. Brecks Brothers Bistro is the everyday counterpart — a warm, neighborhood bar and casual restaurant where quality is never compromised and every guest feels like family.</p>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">What We're Looking For</p>
+          <ul class="detail-list">
+            <li>Investment partners aligned with the vision</li>
+            <li>Experienced chefs and culinary talent</li>
+            <li>Front-of-house leadership</li>
+            <li>Restaurant marketing partners</li>
+            <li>Real estate and location connections</li>
+            <li>Hospitality operators &amp; consultants</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">Stage &amp; Opportunity</p>
+          <p class="detail-body">This concept is in active development. We have the hospitality connections, culinary relationships, marketing expertise, and business acumen to build something exceptional. We are seeking investors, strategic partners, and talented collaborators who share our vision for what dining in this community could be.</p>
+          <div class="highlight-box">
+            <p>"We know chefs. We know marketers. We know investors. Now we're looking for the right partners to turn this vision into a table worth reserving."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="brand-divider">
+
+<!-- LANDSCAPING DETAIL -->
+<div id="landscaping" class="alt-bg">
+  <div class="brand-detail">
+    <div class="brand-detail-inner">
+      <div class="brand-detail-sidebar fade-in">
+        <div class="sidebar-number">03</div>
+        <h3 class="sidebar-name">Brecks Brothers<br><em>Landscaping</em></h3>
+        <p class="sidebar-tagline">Electric-only. Walk-behind only. The best-looking yards in the county.</p>
+        <div class="sidebar-pills">
+          <span class="pill">New Castle County, DE</span>
+          <span class="pill">100% Electric Tools</span>
+          <span class="pill">Walk-Behind Mowers</span>
+          <span class="pill">Eco-Friendly</span>
+          <span class="pill">Family Run</span>
+        </div>
+        <a href="#contact" class="sidebar-cta">Request a Quote</a>
+      </div>
+      <div class="brand-detail-content fade-in fade-in-delay-1">
+        <div class="detail-section">
+          <p class="detail-h">About the Service</p>
+          <p class="detail-body">Brecks Brothers Landscaping is a family-run lawn care operation serving New Castle County, Delaware and surrounding areas. Our commitment is simple: use only battery-powered electric tools — no gas fumes, no excessive noise, no carbon footprint — and only walk-behind mowers that deliver the precision, striping, and professional finish that riding mowers simply cannot match.</p>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">Our Differentiators</p>
+          <ul class="detail-list">
+            <li>100% battery-electric equipment</li>
+            <li>Walk-behind mowers only (no riding)</li>
+            <li>Bagged or mulched at client preference</li>
+            <li>Quieter than traditional lawn care</li>
+            <li>Zero emissions — better for neighbors &amp; environment</li>
+            <li>Precision edge work and clean finish</li>
+            <li>Family owned — personally accountable</li>
+            <li>Serving NCC Delaware &amp; surrounding areas</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">The Eco Difference</p>
+          <p class="detail-body">Gas-powered lawn equipment is one of the most disproportionate sources of small-engine pollution in residential areas. By operating entirely on battery-powered tools, Brecks Brothers Landscaping delivers a professional result while meaningfully reducing noise pollution and carbon emissions neighborhood by neighborhood.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="brand-divider">
+
+<!-- BAKERY DETAIL -->
+<div id="bakery">
+  <div class="brand-detail">
+    <div class="brand-detail-inner">
+      <div class="brand-detail-sidebar fade-in">
+        <div class="sidebar-number">04</div>
+        <h3 class="sidebar-name">Brecks Brothers<br><em>Bakery</em></h3>
+        <p class="sidebar-tagline">Fresh from the oven. On your doorstep. Every week.</p>
+        <div class="sidebar-pills">
+          <span class="pill">Greenville, DE</span>
+          <span class="pill">Weekly Delivery</span>
+          <span class="pill">Subscription</span>
+          <span class="pill">Artisan Quality</span>
+          <span class="pill">Configurable</span>
+        </div>
+        <a href="#contact" class="sidebar-cta">Join the Waitlist</a>
+      </div>
+      <div class="brand-detail-content fade-in fade-in-delay-1">
+        <div class="detail-section">
+          <p class="detail-h">About the Bakery</p>
+          <p class="detail-body">Brecks Brothers Bakery is an artisan home bakery delivering fresh-crafted breads, bagels, pizza doughs, and more directly to residents in the Greenville, Delaware area. Everything is made fresh, in small batches, with care — no preservatives, no mass production, and no compromise on quality. We believe everyone deserves access to the kind of bread that makes a difference.</p>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">What We Bake</p>
+          <ul class="detail-list">
+            <li>New York-style bagels</li>
+            <li>Sourdough &amp; artisan loaves</li>
+            <li>Pizza doughs &amp; focaccia</li>
+            <li>Soft dinner rolls &amp; sandwich bread</li>
+            <li>Seasonal &amp; specialty items</li>
+            <li>Completely configurable orders</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">How It Works</p>
+          <p class="detail-body">Subscribe to a weekly delivery plan and configure your order to exactly what your household needs. Every order is baked fresh and delivered locally. Pause, modify, or cancel at any time — we work around your life, not the other way around. Serving the Greenville, DE area with expansion plans tied to demand.</p>
+          <div class="highlight-box">
+            <p>"Local artisan quality, made fresh and delivered locally. Because great bread shouldn't require a trip to a specialty bakery."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="brand-divider">
+
+<!-- SPRINGS INTO THE HOBBY DETAIL -->
+<div id="springs" class="alt-bg">
+  <div class="brand-detail">
+    <div class="brand-detail-inner">
+      <div class="brand-detail-sidebar fade-in">
+        <div class="sidebar-number">05</div>
+        <h3 class="sidebar-name">Springs Into<br><em>the Hobby</em></h3>
+        <p class="sidebar-tagline">Your one-stop hobby destination. Every passion, every level.</p>
+        <div class="sidebar-pills">
+          <span class="pill">Shopify</span>
+          <span class="pill">Dropship</span>
+          <span class="pill">Sports Cards</span>
+          <span class="pill">Pokémon</span>
+          <span class="pill">Coins</span>
+          <span class="pill">Lawn Hobby</span>
+          <span class="pill">Memorabilia</span>
+        </div>
+        <a href="#contact" class="sidebar-cta">Visit the Shop</a>
+      </div>
+      <div class="brand-detail-content fade-in fade-in-delay-1">
+        <div class="detail-section">
+          <p class="detail-h">About the Brand</p>
+          <p class="detail-body">Springs Into the Hobby launched as a sports card and memorabilia ecommerce brand and is evolving into a fully curated, Shopify-powered dropship destination for hobbyists of every kind. From sports card collectors to Pokémon traders, coin enthusiasts, lawn care aficionados, and beyond — Springs Into the Hobby brings the right products to the right community at the right price.</p>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">Hobby Categories</p>
+          <ul class="detail-list">
+            <li>Sports cards &amp; memorabilia</li>
+            <li>Pokémon &amp; trading card games</li>
+            <li>Coin collecting &amp; numismatics</li>
+            <li>Lawn care hobby supplies</li>
+            <li>Collectibles &amp; pop culture</li>
+            <li>New categories always being added</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <p class="detail-h">Platform &amp; Model</p>
+          <p class="detail-body">Built on Shopify with a dropship-first model, Springs Into the Hobby is designed for scalability and category expansion without the burden of excess inventory risk. Powered by the same ecommerce expertise that has generated over $1.5B in revenue for other brands — now applied to something personal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gold-bar"></div>
+
+<!-- OPPORTUNITY -->
+<section id="opportunity" class="dark-bg" style="padding: 6rem 3rem;">
+  <div class="opp-inner">
+    <p class="section-label fade-in">Work With Us</p>
+    <h2 class="section-title fade-in fade-in-delay-1">We're always open to the <em>right conversation.</em></h2>
+    <div class="title-rule fade-in fade-in-delay-2"></div>
+    <p class="section-intro fade-in fade-in-delay-3" style="color: var(--stone-light);">Whether you're an investor, a potential business partner, a talented collaborator, or a brand in need of strategic guidance — there's likely a conversation worth having.</p>
+
+    <div class="opp-grid">
+      <div class="opp-card fade-in">
+        <span class="opp-card-icon">💼</span>
+        <h3>Investment Opportunities</h3>
+        <p>Brecks Bistro is actively seeking the right investment partners to bring our dual-restaurant concept to life. We have the relationships, the expertise, and the vision. We need partners who believe in building something lasting.</p>
+      </div>
+      <div class="opp-card fade-in fade-in-delay-1">
+        <span class="opp-card-icon">🤝</span>
+        <h3>Strategic Partnerships</h3>
+        <p>Each Brecks Brothers brand is open to the right strategic alliances — from co-marketing relationships to referral partnerships and beyond. If your network, expertise, or services align with any of our ventures, reach out.</p>
+      </div>
+      <div class="opp-card fade-in fade-in-delay-2">
+        <span class="opp-card-icon">📈</span>
+        <h3>Ecommerce Consulting Clients</h3>
+        <p>If you're a growth-stage or founder-led ecommerce brand looking to improve margin discipline, paid media efficiency, and customer journey clarity — Brecks Brothers Digital Consulting is accepting new clients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-bar"></div>
+
+<!-- ABOUT -->
+<section id="about" style="padding: 6rem 3rem; background: var(--white);">
+  <div class="about-inner">
+    <div class="about-text fade-in">
+      <p class="section-label">The Family</p>
+      <h2 class="section-title">About <em>Brecks Brothers</em></h2>
+      <div class="title-rule"></div>
+      <p>Brecks Brothers was born from a simple belief: that the best businesses operate like great families. Accountable to each other. Honest about what's working and what isn't. Willing to do the hard things because the people involved actually matter.</p>
+      <blockquote class="pullquote">"Built like family. Run like a business. That's not just a tagline — it's the operating system."</blockquote>
+      <p>What started as a vision for a digital consulting firm between brothers-in-law has grown into a portfolio of brands each built on that same foundation. The business partnership may have evolved, but the philosophy never changed.</p>
+      <p>Based in Wilmington, Delaware, Brecks Brothers serves clients, customers, and communities across the Mid-Atlantic and beyond. We are always looking for the next venture worth building, the next partner worth calling, and the next customer worth delighting.</p>
+    </div>
+    <div class="about-sidebar fade-in fade-in-delay-2">
+      <ul class="values-list">
+        <li>
+          <span class="val-num">01</span>
+          <div class="val-content">
+            <h4>Family Accountability</h4>
+            <p>We operate with the honesty and care of family — which means we hold ourselves to a higher standard than any contract requires.</p>
+          </div>
+        </li>
+        <li>
+          <span class="val-num">02</span>
+          <div class="val-content">
+            <h4>Craft Over Convenience</h4>
+            <p>Whether it's a financial model or a fresh-baked loaf, we refuse to cut corners just because no one would notice.</p>
+          </div>
+        </li>
+        <li>
+          <span class="val-num">03</span>
+          <div class="val-content">
+            <h4>Community First</h4>
+            <p>Every Brecks Brothers brand is designed to serve the communities and clients we operate within — not extract from them.</p>
+          </div>
+        </li>
+        <li>
+          <span class="val-num">04</span>
+          <div class="val-content">
+            <h4>Growth with Discipline</h4>
+            <p>We believe in sustainable, profitable growth. Revenue without margin discipline is fragile. We build for the long run.</p>
+          </div>
+        </li>
+        <li>
+          <span class="val-num">05</span>
+          <div class="val-content">
+            <h4>Always Evolving</h4>
+            <p>The Brecks Brothers portfolio will grow. New ventures, new partners, new categories — guided always by the same core values.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background: var(--cream); padding: 6rem 3rem;">
+  <div class="contact-inner">
+    <div class="contact-left fade-in">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Let's start a <em>conversation.</em></h2>
+      <div class="title-rule"></div>
+      <p>Whether you're a prospective consulting client, a restaurant investor, a landscaping customer, a bakery subscriber, or simply someone with an idea worth exploring — we want to hear from you.</p>
+      <ul class="contact-channels">
+        <li>
+          <div class="chan-icon">✉️</div>
+          <div>
+            <span class="chan-label">Email</span>
+            <a href="mailto:wvinton.ecom@gmail.com" class="chan-value">wvinton.ecom@gmail.com</a>
+          </div>
+        </li>
+        <li>
+          <div class="chan-icon">💼</div>
+          <div>
+            <span class="chan-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/will-vinton/" target="_blank" class="chan-value">linkedin.com/in/will-vinton</a>
+          </div>
+        </li>
+        <li>
+          <div class="chan-icon">📍</div>
+          <div>
+            <span class="chan-label">Location</span>
+            <span class="chan-value">Wilmington, Delaware &amp; surrounding areas</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="contact-form fade-in fade-in-delay-2">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="First and last name">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label>I'm interested in...</label>
+        <select>
+          <option value="">Select a topic</option>
+          <option>Digital Consulting Services</option>
+          <option>Brecks Bistro — Investment / Partnership</option>
+          <option>Landscaping Services (NCC, DE)</option>
+          <option>Bakery Subscription (Greenville, DE)</option>
+          <option>Springs Into the Hobby</option>
+          <option>General Partnership / Opportunity</option>
+          <option>Something else entirely</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us where you are, what you're working on, and what you're looking for. The more context, the better."></textarea>
+      </div>
+      <button type="button" class="form-submit" onclick="handleSubmit()">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name"><span>Brecks</span> Brothers</div>
+        <p class="footer-tagline">A family of brands. Built with care, run with discipline, and always looking for the right next thing.</p>
+        <p style="font-family: var(--ff-sans); font-size: 0.72rem; color: var(--stone);">Wilmington, Delaware</p>
+      </div>
+      <div class="footer-col">
+        <h4>Our Brands</h4>
+        <ul>
+          <li><a href="#consulting">BB Digital Consulting</a></li>
+          <li><a href="#bistro">Brecks Bistro</a></li>
+          <li><a href="#landscaping">BB Landscaping</a></li>
+          <li><a href="#bakery">BB Bakery</a></li>
+          <li><a href="#springs">Springs Into the Hobby</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Opportunities</h4>
+        <ul>
+          <li><a href="#opportunity">Invest With Us</a></li>
+          <li><a href="#opportunity">Partner With Us</a></li>
+          <li><a href="#consulting">Hire for Consulting</a></li>
+          <li><a href="#contact">Start a Conversation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:wvinton.ecom@gmail.com">Email Us</a></li>
+          <li><a href="https://www.linkedin.com/in/will-vinton/" target="_blank">LinkedIn</a></li>
+          <li><a href="#about">About Brecks Brothers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 Brecks Brothers. All rights reserved. Family of Brands operating out of Wilmington, Delaware.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function handleSubmit() {
+    const btn = document.querySelector('.form-submit');
+    btn.textContent = '✓ Message Sent — We\'ll be in touch!';
+    btn.style.background = '#4caf50';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
